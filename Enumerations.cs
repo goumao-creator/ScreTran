@@ -6,6 +6,7 @@ public class Enumerations
         Google,
         Yandex,
         Bing,
+        MarianMT,
     }
 
     public enum Model
