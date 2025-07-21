@@ -39,7 +39,7 @@
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
 
-  <!-- Если проекта RawInput нет в репозитории, закомментируйте или удалите блок ниже -->
+  <!-- Если проекта RawInput нет в репозитории, удалите или закомментируйте этот блок -->
   <!--
   <ItemGroup>
     <ProjectReference Include="..\RawInput\RawInput.csproj" />
@@ -56,7 +56,7 @@
     <Folder Include="Helpers\" />
   </ItemGroup>
 
-  <!-- Добавляем наш Python-скрипт в выходную папку -->
+  <!-- Копируем Python-скрипт рядом с EXE -->
   <ItemGroup>
     <None Include="marianmt_translate.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
