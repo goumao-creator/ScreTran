@@ -1,5 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
@@ -38,9 +39,12 @@
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
 
+  <!-- Если проекта RawInput нет в репозитории, закомментируйте или удалите блок ниже -->
+  <!--
   <ItemGroup>
     <ProjectReference Include="..\RawInput\RawInput.csproj" />
   </ItemGroup>
+  -->
 
   <ItemGroup>
     <Compile Update="Views\TranslationWindow.xaml.cs">
@@ -58,11 +62,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
 </Project>
-
-
-	<ItemGroup>
-	  <Folder Include="Helpers\" />
-	</ItemGroup>
 
 </Project>
