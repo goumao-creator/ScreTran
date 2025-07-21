@@ -1,7 +1,7 @@
-name: Build Only
+name: Build ScreTran.exe
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:    # ← ручной запуск из UI
   push:
     branches: [ main ]
   pull_request:
@@ -11,22 +11,23 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout code
+    - name: 🧾 Checkout
       uses: actions/checkout@v4
 
-    - name: Setup .NET SDK
+    - name: 🛠️ Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0.x'
 
-    - name: Restore dependencies
+    - name: 📦 Restore
       run: dotnet restore
 
-    - name: Build solution
-      run: dotnet build ScreTran.sln --configuration Release --no-restore
+    - name: 🔨 Build Release
+      run: dotnet build ScreTran.sln --configuration Release
 
-    - name: Upload EXE artifact
-      uses: actions/upload-artifact@v3
+    - name: 📤 Upload EXE
+      uses: actions/upload-artifact@v4    # ← обновили на v4
       with:
-        name: ScreTran-Bin
+        name: ScreTran.exe
         path: ScreTran/bin/Release/net8.0-windows10.0.22621.0/ScreTran.exe
+
