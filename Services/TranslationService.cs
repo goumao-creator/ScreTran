@@ -43,9 +43,6 @@ public class TranslationService : ITranslationService
             return (await _yandexTranslator.TranslateAsync(input, "ru")).Translation;
         if (translator == Enumerations.Translator.Bing)
             return (await _bingTranslator.TranslateAsync(input, "ru")).Translation;
-            if (translator == Translator.Google) return await TranslateGoogleAsync(input);
-        if (translator == Translator.Yandex) return (await _yandexTranslator.TranslateAsync(input, "ru")).Translation;
-        if (translator == Translator.Bing)   return (await _bingTranslator.TranslateAsync(input, "ru")).Translation;
         if (translator == Translator.MarianMT)
             return await TranslateMarianAsync(input);
 
