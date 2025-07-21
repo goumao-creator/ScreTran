@@ -1,232 +1,252 @@
-﻿<Window
-    x:Class="ScreTran.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:s="clr-namespace:System;assembly=mscorlib"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:ScreTran"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-    d:DataContext="{d:DesignInstance Type=local:MainWindowModel}"
-    Width="600"
-    Height="600"
-    mc:Ignorable="d"
-    Title="ScreTran" Background="#FF313338" WindowStyle="None" ResizeMode="NoResize" Loaded="Window_Loaded"
-    UseLayoutRounding="True">
+<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="ScreTran.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:ScreTran"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        d:DataContext="{d:DesignInstance Type=local:MainWindowModel}"
+        Width="600" Height="600"
+        mc:Ignorable="d"
+        Title="ScreTran"
+        Background="#FF313338"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded"
+        UseLayoutRounding="True">
 
-    <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="34"/>
-    </WindowChrome.WindowChrome>
+  <WindowChrome.WindowChrome>
+    <WindowChrome CaptionHeight="34"/>
+  </WindowChrome.WindowChrome>
 
-    <Window.Resources>
-        <ResourceDictionary>
-            <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
-            <local:BoolToObjectConverter x:Key="BoolToInvertedBoolConverter">
-                <local:BoolToObjectConverter.TrueValue>
-                    <s:Boolean>False</s:Boolean>
-                </local:BoolToObjectConverter.TrueValue>
-                <local:BoolToObjectConverter.FalseValue>
-                    <s:Boolean>True</s:Boolean>
-                </local:BoolToObjectConverter.FalseValue>
-            </local:BoolToObjectConverter>
-            <Style TargetType="Label">
-                <Setter Property="Margin" Value="0,8,0,6"/>
-                <Setter Property="Foreground" Value="White"/>
-                <Setter Property="FontSize" Value="14"/>
-            </Style>
-            <Style x:Key="StandardButtonStyle" TargetType="Button">
-                <Setter Property="Width" Value="200"/>
-                <Setter Property="Height" Value="35"/>
-                <Setter Property="FontSize" Value="14"/>
-                <Setter Property="Foreground" Value="White"/>
-                <Setter Property="BorderBrush" Value="{x:Null}"/>
-                <Setter Property="Background" Value="#FF4E5058"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border Background="{TemplateBinding Background}">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
+  <Window.Resources>
+    <ResourceDictionary>
+      <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+      <local:BoolToObjectConverter x:Key="BoolToInvertedBoolConverter">
+        <local:BoolToObjectConverter.TrueValue>
+          <s:Boolean>False</s:Boolean>
+        </local:BoolToObjectConverter.TrueValue>
+        <local:BoolToObjectConverter.FalseValue>
+          <s:Boolean>True</s:Boolean>
+        </local:BoolToObjectConverter.FalseValue>
+      </local:BoolToObjectConverter>
 
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#FF6A6C77"/>
-                    </Trigger>
-                </Style.Triggers>
-                <Style.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5" />
-                    </Style>
-                </Style.Resources>
-            </Style>
-            <Style x:Key="CaptionButtonStyle" TargetType="Button">
-                <Setter Property="Width" Value="44"/>
-                <Setter Property="Height" Value="30"/>
-                <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
-                <Setter Property="FontSize" Value="10"/>
-                <Setter Property="BorderThickness" Value="0"/>
-                <Setter Property="Foreground" Value="LightGray"/>
-                <Setter Property="Background" Value="{x:Null}"/>
-                <Setter Property="BorderBrush" Value="{x:Null}"/>
-                <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+      <Style TargetType="Label">
+        <Setter Property="Margin" Value="0,8,0,6"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="14"/>
+      </Style>
 
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border Background="{TemplateBinding Background}">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
+      <Style x:Key="StandardButtonStyle" TargetType="Button">
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="Background" Value="#FF4E5058"/>
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Border Background="{TemplateBinding Background}">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+          <Trigger Property="IsMouseOver" Value="True">
+            <Setter Property="Background" Value="#FF6A6C77"/>
+          </Trigger>
+        </Style.Triggers>
+        <Style.Resources>
+          <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="5" />
+          </Style>
+        </Style.Resources>
+      </Style>
 
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#FF2C2E32"/>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-        </ResourceDictionary>
-    </Window.Resources>
-    <i:Interaction.Triggers>
-        <i:EventTrigger EventName="Closing">
-            <i:InvokeCommandAction Command="{Binding CloseCommand}"/>
-        </i:EventTrigger>
-    </i:Interaction.Triggers>
-    <Border x:Name="MainWindowBorder">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+      <Style x:Key="CaptionButtonStyle" TargetType="Button">
+        <Setter Property="Width" Value="44"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Foreground" Value="LightGray"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Border Background="{TemplateBinding Background}">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+          <Trigger Property="IsMouseOver" Value="True">
+            <Setter Property="Background" Value="#FF2C2E32"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+    </ResourceDictionary>
+  </Window.Resources>
+
+  <i:Interaction.Triggers>
+    <i:EventTrigger EventName="Closing">
+      <i:InvokeCommandAction Command="{Binding CloseCommand}"/>
+    </i:EventTrigger>
+  </i:Interaction.Triggers>
+
+  <Border x:Name="MainWindowBorder">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition/>
+      </Grid.RowDefinitions>
+
+      <!-- Title bar -->
+      <Grid x:Name="AppTitleBar" Background="#FF1E1F22">
+        <TextBlock Text="ScreTran"
+                   Margin="15,0,0,0"
+                   FontFamily="Segoe UI Black"
+                   FontSize="14"
+                   Foreground="Gray"
+                   VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+          <Button x:Name="MinimizeButton"
+                  Style="{StaticResource CaptionButtonStyle}"
+                  Content="&#xE949;"
+                  Click="MinimizeWindow"/>
+          <Button x:Name="MaximizeButton"
+                  Style="{StaticResource CaptionButtonStyle}"
+                  Content="&#xE739;"
+                  Click="MaximizeWindow"/>
+          <Button x:Name="RestoreButton"
+                  Style="{StaticResource CaptionButtonStyle}"
+                  Content="&#xE923;"
+                  Click="RestoreWindow"/>
+          <Button Style="{StaticResource CaptionButtonStyle}"
+                  Content="&#xE106;"
+                  Click="CloseWindow"/>
+        </StackPanel>
+      </Grid>
+
+      <Grid x:Name="HotkeyDialog"
+            Grid.Row="1"
+            Panel.ZIndex="20"
+            Visibility="{Binding IsKeySetting, Converter={StaticResource BoolToVisConverter}}"
+            d:Visibility="Hidden">
+        <Grid.Background>
+          <SolidColorBrush Color="Black" Opacity="0.5"/>
+        </Grid.Background>
+        <Border CornerRadius="5"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Background="#FF232428"
+                Padding="50">
+          <StackPanel>
+            <TextBlock Text="Нажмите клавишу..."
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Center"
+                       Foreground="White"/>
+            <TextBlock/>
+            <TextBlock Text="(esc) для отмены"
+                       HorizontalAlignment="Center"
+                       Foreground="White"/>
+          </StackPanel>
+        </Border>
+      </Grid>
+
+      <!-- Main content -->
+      <Grid x:Name="MainContent" Grid.Row="1">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Start/Stop buttons -->
+        <Button Grid.Row="0"
+                Command="{Binding StopCommand}"
+                Content="СТОП"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Center"
+                Style="{StaticResource StandardButtonStyle}"
+                Margin="12,8"
+                Background="#FF7B3838"
+                Visibility="{Binding Parameters.IsStarted, Converter={StaticResource BoolToVisConverter}}"/>
+        <Button Grid.Row="0"
+                Command="{Binding StartCommand}"
+                Content="Пожалии!"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Center"
+                Style="{StaticResource StandardButtonStyle}"
+                Margin="12,8"/>
+
+        <Border Grid.Row="1" Background="#FF232428">
+          <Expander x:Name="Expander"
+                    Margin="12,4"
+                    Header="Расширенные настройки"
+                    FontSize="15"
+                    Foreground="White"
+                    Expanded="Expander_Expanded"
+                    Collapsed="Expander_Collapsed"
+                    IsExpanded="True">
+            <Grid x:Name="ExpandedArea" Margin="48,0">
+              <Grid.RowDefinitions>
                 <RowDefinition/>
-            </Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+              </Grid.RowDefinitions>
 
-            <Grid x:Name="AppTitleBar" Background="#FF1E1F22">
-                <TextBlock
-				    Text="ScreTran"
-				    Margin="15,0,0,0"
-				    FontFamily="Segoe UI Black"
-				    FontSize="14" 
-                    Foreground="Gray"
-                    VerticalAlignment="Center"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button x:Name="MinimizeButton" Style="{StaticResource CaptionButtonStyle}"
-						Content="&#xE949;"
-						Click="MinimizeWindow"/>
-                    <Button x:Name="MaximizeButton" Style="{StaticResource CaptionButtonStyle}"
-						Content="&#xE739;"
-						Click="MaximizeWindow"/>
-                    <Button x:Name="RestoreButton" Style="{StaticResource CaptionButtonStyle}"
-				        Content="&#xE923;"
-				        Click="RestoreWindow"/>
-                    <Button Style="{StaticResource CaptionButtonStyle}"
-						Content="&#xE106;"
-						Click="CloseWindow"/>
-                </StackPanel>
+              <!-- Other settings rows… -->
+
+              <!-- Переводчик -->
+              <StackPanel Grid.Row="1" ToolTip="Переводчик…">
+                <Label Content="Переводчик"/>
+                <ComboBox
+                  Style="{DynamicResource ComboBoxStyle1}"
+                  SelectedValuePath="Tag"
+                  SelectedValue="{Binding Settings.Translator, Mode=TwoWay}"
+                  Background="#FF1E1F22"
+                  BorderBrush="{x:Null}"
+                  Foreground="White"
+                  FontSize="14">
+                  <ComboBoxItem Tag="{x:Static local:Enumerations.Translator.Google}"
+                                Content="Google"/>
+                  <ComboBoxItem Tag="{x:Static local:Enumerations.Translator.Yandex}"
+                                Content="Yandex"/>
+                  <ComboBoxItem Tag="{x:Static local:Enumerations.Translator.Bing}"
+                                Content="Bing"/>
+                  <ComboBoxItem Tag="{x:Static local:Enumerations.Translator.MarianMT}"
+                                Content="MarianMT"/>
+                  <ComboBox.Resources>
+                    <SolidColorBrush
+                      x:Key="{x:Static SystemColors.WindowBrushKey}"
+                      Color="#FF1E1F22"/>
+                    <SolidColorBrush
+                      x:Key="{x:Static SystemColors.WindowFrameBrushKey}"/>
+                  </ComboBox.Resources>
+                </ComboBox>
+              </StackPanel>
+
+              <!-- Remaining settings rows… -->
+
             </Grid>
-            <Grid x:Name="HotkeyDialog" Grid.Row="1" Panel.ZIndex="20" d:Visibility="Hidden" Visibility="{Binding IsKeySetting, Converter={StaticResource BoolToVisConverter}}">
-                <Grid.Background>
-                    <SolidColorBrush Color="Black" Opacity="0.5"/>
-                </Grid.Background>
-                <Border CornerRadius="5" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FF232428" Padding="50">
-                    <StackPanel >
-                        <TextBlock Text="Нажмите клавишу..." FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center" Foreground="White"/>
-                        <TextBlock/>
-                        <TextBlock Text="(esc) для отмены" HorizontalAlignment="Center" Foreground="White"/>
-                    </StackPanel>
-                </Border>
-            </Grid>
-            <Grid x:Name="MainContent" Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Button
-                     Grid.Row="0"
-                     Command="{Binding StopCommand}"
-                     Content="СТОП" HorizontalAlignment="Stretch" Width="Auto" VerticalAlignment="Center" Style="{StaticResource StandardButtonStyle}"
-                     Margin="12,8" Panel.ZIndex="10" Background="#FF7B3838" Visibility="{Binding Parameters.IsStarted, Converter={StaticResource BoolToVisConverter}}"/>
-                <Button
-                    Grid.Row="0"
-                    Command="{Binding StartCommand}"
-                    Content="Поехали!" HorizontalAlignment="Stretch" Width="Auto" VerticalAlignment="Center" Style="{StaticResource StandardButtonStyle}"
-                    Margin="12,8" />
-                <Border Grid.Row="1" Background="#FF232428">
-                    <Expander x:Name="Expander" Margin="12,4" Header="Расширенные настройки" FontSize="15" Foreground="White" Expanded="Expander_Expanded" Collapsed="Expander_Collapsed" IsExpanded="True">
-                        <Grid x:Name="ExpandedArea" Margin="48,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Row="0" ToolTip="Размер шрифта переводимого текста.">
-                                <Label Content="Размер шрифта"/>
-                                <xctk:IntegerUpDown Value="{Binding Settings.FontSize}" Increment="1" Maximum="200" Minimum="1" Background="#FF1E1F22" BorderBrush="{x:Null}" Foreground="White" FontSize="14"/>
-                            </StackPanel>
-                            <StackPanel Grid.Row="1" ToolTip="Переводчик используемый для перевода текста.">
-                                <Label Content="Переводчик"/>
-                                <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedItem="{Binding Settings.Translator, Mode=TwoWay}" ItemsSource="{Binding Translators}" Background="#FF1E1F22" BorderBrush="{x:Null}" Foreground="White" FontSize="14">
-                                    <ComboBox.Resources>
-                                        <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#FF1E1F22" />
-                                        <SolidColorBrush x:Key="{x:Static SystemColors.WindowFrameBrushKey}"/>
-                                    </ComboBox.Resources>
-                                </ComboBox>
-                            </StackPanel>
-                            <StackPanel Grid.Row="2" ToolTip="ЭКСПЕРИМЕНТАЛЬНАЯ НАСТРОЙКА!!!&#x0a;Модель используемая для распознавания текста с экрана.&#x0a;Недоступно для изменения если программа находится в процессе перевода.">
-                                <Label Content="Модель"/>
-                                <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedItem="{Binding Settings.OcrModel, Mode=TwoWay}" ItemsSource="{Binding Models}" Background="#FF1E1F22" BorderBrush="{x:Null}" Foreground="White" FontSize="14" IsEnabled="{Binding Parameters.IsStarted, Converter={StaticResource BoolToInvertedBoolConverter}}">
-                                    <ComboBox.Resources>
-                                        <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#FF1E1F22" />
-                                        <SolidColorBrush x:Key="{x:Static SystemColors.WindowFrameBrushKey}"/>
-                                    </ComboBox.Resources>
-                                </ComboBox>
-                            </StackPanel>
-                            <StackPanel Grid.Row="3" ToolTip="Горячая клавиша, для включения/выключения переводчика.">
-                                <Label Content="Горячая клавиша"/>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBox Grid.Column="0" Text="{Binding Settings.Key.Name, Mode=OneWay}" FontWeight="Bold" TextAlignment="Center" IsReadOnly="True" Background="#FF1E1F22" Foreground="White" SelectionBrush="{x:Null}" BorderBrush="{x:Null}"/>
-                                    <Button Grid.Column="1" Content="Назначить" Margin="8,0" Command="{Binding SetKeyCommand}" Style="{StaticResource StandardButtonStyle}" Width="100" Height="26" HorizontalAlignment="Right"/>
-                                    <Button Grid.Column="2" Content="Очистить" Command="{Binding ClearKeyCommand}" Style="{StaticResource StandardButtonStyle}" Width="100" Height="26" HorizontalAlignment="Right"/>
-                                </Grid>
-                            </StackPanel>
-                            <StackPanel Grid.Row="4" ToolTip="Указывается частота в секундах с которой будет делаться захват экрана.&#x0a;Чем меньше частота, тем больше нагрузка на процессор.&#x0a;Если сделать частоту слишком большой - может происходить пропуск реплик.&#x0a;Недоступно для изменения если программа находится в процессе перевода.">
-                                <Label Content="Частота захвата экрана (с.)"/>
-                                <xctk:DecimalUpDown Value="{Binding Settings.Period}" Increment=".1" Maximum="10" Minimum="0.4" Background="#FF1E1F22" BorderBrush="{x:Null}" Foreground="White" FontSize="14" IsEnabled="{Binding Parameters.IsStarted, Converter={StaticResource BoolToInvertedBoolConverter}}"/>
-                            </StackPanel>
-                            <StackPanel Grid.Row="5" ToolTip="Указывается количество итераций захвата экрана, после которого будет скрываться окно перевода, если в окне захвата не обнаружен текст.&#x0a;Например: частота захвата - 1с. количество итераций - 2, то при отсутствии текста для перевода, окно перевода скроется через 2с.">
-                                <Label Content="Итераций для скрытия"/>
-                                <xctk:DecimalUpDown Value="{Binding Settings.HideInterval}" Increment="1" Maximum="10" Minimum="1" Background="#FF1E1F22" BorderBrush="{x:Null}" Foreground="White" FontSize="14" IsEnabled="{Binding Parameters.IsStarted, Converter={StaticResource BoolToInvertedBoolConverter}}"/>
-                            </StackPanel>
-                            <StackPanel Grid.Row="6" Margin="12" Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Button x:Name="ResetSettingsToDefault" Margin="0,0,8,0" Content="Вернуть по умолчанию" Command="{Binding ResetSettingsToDefaultCommand}" Style="{StaticResource StandardButtonStyle}" ToolTip="Вернуть настройки по умолчанию."/>
-                                <Button x:Name="ResetWindowPosition" Content="Сбросить положение окон" Command="{Binding ResetWindowsPositionCommand}" Style="{StaticResource StandardButtonStyle}"/>
-                            </StackPanel>
-                            <TextBlock Grid.Row="7" Margin="0,0,0,8" FontSize="12" HorizontalAlignment="Center">
-                                <Hyperlink x:Name="Link" NavigateUri="https://github.com/PavlikBender/ScreTran" Foreground="#FFAFAFAF">О проекте</Hyperlink>
-                            </TextBlock>
-                        </Grid>
-                    </Expander>
-                </Border>
-            </Grid>
-        </Grid>
-    </Border>
+          </Expander>
+        </Border>
+      </Grid>
+    </Grid>
+  </Border>
 </Window>
